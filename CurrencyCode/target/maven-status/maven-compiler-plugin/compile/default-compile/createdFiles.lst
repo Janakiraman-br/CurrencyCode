@@ -1,0 +1,7 @@
+net\apmoller\athena\microservices\CurrencyProject\dto\CurrencyCodeDto.class
+net\apmoller\athena\microservices\CurrencyProject\CurrencyProjectApplication.class
+net\apmoller\athena\microservices\CurrencyProject\models\CurrencyCode.class
+net\apmoller\athena\microservices\CurrencyProject\services\CurrencyCodeService.class
+net\apmoller\athena\microservices\CurrencyProject\util\AppUtils.class
+net\apmoller\athena\microservices\CurrencyProject\controller\CurrencyCodeController.class
+net\apmoller\athena\microservices\CurrencyProject\repository\CurrencyCodeRepository.class

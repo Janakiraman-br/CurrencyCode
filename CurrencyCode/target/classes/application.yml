@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: Currencydb
+      host: localhost
+      port: 27017
+
+
