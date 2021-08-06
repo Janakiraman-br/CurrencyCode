@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CurrencyCode.iml" filepath="$PROJECT_DIR$/.idea/CurrencyCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CurrencyCode/CurrencyProject.iml" filepath="$PROJECT_DIR$/CurrencyCode/CurrencyProject.iml" />
+    </modules>
+  </component>
+</project>

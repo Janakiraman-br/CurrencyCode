@@ -13,11 +13,12 @@ import java.util.Date;
 public class CurrencyCodeDto
 {
     private String currencyCodeId;
-    private String fromCurrency;
+    //    private String fromCurrency;
     private int currencyCount;
     private String conversionKey;
-    private String roundingOffPoint;
-    private String createdBy;
-    private Date createdDate;
-
+    //    private String roundingOffPoint;
+//    private String createdBy;
+//    private Date createdDate;
+    private double total;
+    private int conversionFactor;
 }

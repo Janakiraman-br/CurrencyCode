@@ -35,4 +35,12 @@ public class CurrencyCodeController
     {
         return currencyCodeService.getCurrencyCodeDataByCode(id);
     }
+/*
+    @GetMapping("/calculate/{count}/{key}")
+    public Mono<Integer> calculateTotalAmount(@PathVariable Mono<Integer> count, @PathVariable String key)
+    {
+        return currencyCodeService.getCalculatedAmount(count,key);
+    }
+
+ */
 }
