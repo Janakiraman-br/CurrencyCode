@@ -11,14 +11,38 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
+
 @Service
 public class CurrencyCodeService
 {
     @Autowired
+    WebClient.Builder webClientBuilder;
+
+
+    public String getCalculatedAmount(int count, String key)
+    {
+        Mono<CurrencyCodeDto> currencyCodeDto ;
+        CurrencyCodeDto currencyCodeDto1;
+
+       String currencyConversionDtoMono = webClientBuilder.build().get()
+                .uri("http://localhost:8082/currencyconversion/conversionkeys/"+key)
+                .retrieve().toString();
+
+//       Mono<Integer> factor = currencyConversionDtoMono.map(e->e.getConversionFactor());
+//
+//
+//        double block = factor.map(a -> a.intValue()).subscribe(a->a.toString());
+        return currencyConversionDtoMono.;
+    }
+}
+
+
+/*
+@Autowired
     private CurrencyCodeRepository currencyCodeRepository;
 
-    @Autowired
-    WebClient.Builder webClientBuilder;
+
 
 
     //GET ALL CURRENCY CODE DATAS
@@ -42,33 +66,4 @@ public class CurrencyCodeService
     {
         return currencyCodeRepository.findById(id).map(AppUtils::currencyCodeEntityToDto).switchIfEmpty(Mono.defer(()->Mono.error(new CodeViewException("Invalid ID Found"))));
     }
-/*
-    public Mono<Integer> getCalculatedAmount(Mono<Integer> count, String key)
-    {
-        Mono<CurrencyCodeDto> currencyCodeDto ;
-        CurrencyCodeDto currencyCodeDto1;
-
-       Mono<CurrencyConversionDto> currencyConversionDtoMono = webClientBuilder.build().get()
-                .uri("http://localhost:8082/currencyconversion/conversionkey/"+key)
-                .retrieve().bodyToMono(CurrencyConversionDto.class);
-
-       Mono<Integer> factor = currencyConversionDtoMono.map(e->e.getConversionFactor());
-
-       return factor*count;
-       }
-*/
-/*
-        Mono<CurrencyCodeDto> cast = currencyCodeDto.map(e -> e.setConversionFactor(currencyConversionDtoMono.map(a -> a.getConversionFactor()))).cast(CurrencyCodeDto.class);
  */
-
-
-
-          /*
-    return currencyConversionDtoMono.flatMap(a->webClientBuilder.build().get()
-
-            .uri("http://localhost:8083/commodity/commoditygroupcode/"+a.getCommodityGroupCode())
-        .retrieve().bodyToFlux(RsCommodityDto.class))
-        .switchIfEmpty(Mono.defer(()-> Mono.error(new InvalidCodeException("Invalid Group Code"))));
-*/
-
-}

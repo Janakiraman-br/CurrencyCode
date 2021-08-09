@@ -14,6 +14,16 @@ public class CurrencyCodeController
 {
     @Autowired
     private CurrencyCodeService currencyCodeService;
+    @GetMapping("/calculate/{count}/{key}")
+    public String calculateTotalAmount(@PathVariable int count, @PathVariable String key)
+    {
+        return currencyCodeService.getCalculatedAmount(count,key);
+    }
+
+}
+
+
+/*
 
     //GET ALL CURRENCY CODE DATA
     @GetMapping
@@ -35,12 +45,4 @@ public class CurrencyCodeController
     {
         return currencyCodeService.getCurrencyCodeDataByCode(id);
     }
-/*
-    @GetMapping("/calculate/{count}/{key}")
-    public Mono<Integer> calculateTotalAmount(@PathVariable Mono<Integer> count, @PathVariable String key)
-    {
-        return currencyCodeService.getCalculatedAmount(count,key);
-    }
-
  */
-}
